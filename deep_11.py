@@ -170,6 +170,7 @@ dd
 t=Tokenizer()
 t.fit_on_texts(x_clean)
 r=t.texts_to_sequences(x_clean)
+len(t.index_word)
 
 print(r[0])
 
@@ -185,11 +186,14 @@ y=data['sentiment']
 x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2,random_state=42)
 print(x_train.shape,y_train.shape,x_test.shape,y_test.shape)
 
+x[0].size
+
 from keras.models import Sequential
-from keras.layers import Dense,Conv2D,Embedding,LSTM
+from keras.layers import Dense,Conv2D,Embedding,LSTM,Input
 model=Sequential()
-model.add(LSTM(units=128, return_sequences=True,input_shape=(x_train.shape[1],1)))
-model.add(LSTM(units=128))
+model.add(Input(shape=(2514,)))
+model.add(Embedding(input_dim=99246,output_dim=3))
+model.add(LSTM(32))
 model.add(Dense(2,activation='softmax'))
 model.summary()
 
