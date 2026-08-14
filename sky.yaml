@@ -1,0 +1,6 @@
+train: /content/drive/MyDrive/Dataset/Image_data/india/sky/train/images
+val: /content/drive/MyDrive/Dataset/Image_data/india/sky/valid/images
+test: /content/drive/MyDrive/Dataset/Image_data/india/sky/test/images
+nc: 1
+names:
+  "0": sky
